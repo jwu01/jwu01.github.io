@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+    <html>
+
+    <head>
+      <meta charset="utf-8">
+      <title>Mathematica Guide</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link href="math.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+      <div class="container-fluid">
+
+
+        <h1 align="center">Mathematica Guide</h1>
+        <hr>
+        <h4>by Duck Team -- Jeffrey Wu and Runmin Lu</h3>
+        <br>
+
+        <h2>What is Mathematica?</h2>
+        <p>Mathematica is a symbolic mathematical computation program, sometimes called a computer algebra program, used in many scientific, engineering, mathematical, and computing fields. It was conceived by Stephen Wolfram and is developed by Wolfram Research of Champaign, Illinois.  The Wolfram Language is the programming language used in Mathematica.</p>
+        <hr>
+
+        <h2>Get Started!</h2>
+        Mathematica provides a <a href="https://www.wolfram.com/mathematica/trial/"> 15-day free trial </a>for those who wish to experiment with the product. <br>
+        IF you wish to purchase the product, click <a href= "https://www.wolfram.com/mathematica/pricing/">HERE</a>.
+        <hr>
+
+        <h2>Using Mathematica</h2>
+        Mathematica uses what is called a notebook as a text editor, which includes a cell hierarchy. This kind of text editor allows for the user to
+        embed their code within plain text, to create a dynamic experience. Hitting Shift+Enter, allows the user toevaluate any written code.
+        <hr>
+
+        <h2>Features and Examples</h2>
+        <div class="accordion" id="acc">
+
+          <div class="card">
+            <div class="card-header" id="h1">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c1" aria-expanded="false" aria-controls="c1">
+                   Basic Operations
+                </button>
+              </h2>
+            </div>
+            <div id="c1" class="collapse" aria-labelledby="h1" data-parent="#acc">
+              <div class="card-body">
+
+                <div class="alert alert-dark">
+                  <b>Arithmetic</b>
+                  <hr>
+                  Plus[<var>x, y, z, ...</var>], +<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;represents a sum of terms.
+                  <hr>
+                  Times[<var>x, y, z, ...</var>], *<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;represents a product of terms.
+                  <hr>
+                  Power[<var>x, y,</var>], ^<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;gives x to the power y.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="arith">Examples</button>
+                  <div id="arithEx"></div>
+                </div>
+
+                <div class="alert alert-dark">
+                  <b>Conversions</b>
+                  <hr>
+                  N[<var>expr</var>]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;gives the numerical value of <var>expr</var>.
+                  <hr>
+                  N[<var>expr</var>, <var>n</var>]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;attempts to give a result with <var>n</var>‐digit precision.
+                  <hr>
+                  BaseForm[<var>expr</var>, <var>n</var>]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;prints with the numbers in <var>expr</var> given in base <var>n</var>.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="conv">Examples</button>
+                  <div id="convEx"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="h2">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c2" aria-expanded="false" aria-controls="c2">
+                  Lists
+                </button>
+              </h2>
+            </div>
+            <div id="c2" class="collapse" aria-labelledby="h2" data-parent="#acc">
+              <div class="card-body">
+
+                <div class="alert alert-dark">
+                  <b>Range</b>
+                  <hr>
+                  Range[<var>i<sub>max</sub></var>]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;generates the list {1, 2, ..., <var>i<sub>max</sub></var>}.
+                  <hr>
+                  Range[<var>i<sub>min</sub></var>, <var>i<sub>max</sub></var>]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;generates the list {<var>i<sub>min</sub></var>, ..., <var>i<sub>max</sub></var>}.
+                  <hr>
+                  Range[<var>i<sub>min</sub></var>, <var>i<sub>max</sub></var>, <var>di</var>]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;uses step <var>di</var>.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="range">Examples</button>
+                  <div id="rangeEx"></div>
+                </div>
+
+                <div class="alert alert-dark">
+                  <b>Table</b>
+                  <hr>
+                  Table[<var>expr</var>, <var>n</var>]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;generates <var>n</var> copies of <var>expr</var>. <br>
+                  <hr>
+                  Table[<var>expr</var>,{<var>i</var>, (<var>i<sub>min</sub></var>,) <var>i<sub>max</sub></var> (, <var>di</var>)}]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;generates a list of the values of expr when i runs from 1(<var>i<sub>min</sub></var>) to <var>i<sub>max</sub></var>, using steps <var>di</var>.<br>
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="table">Examples</button>
+                  <div id="tableEx"></div>
+                </div>
+
+                <div class="alert alert-dark">
+                  <b>Indexing</b>
+                  <hr>
+                  <var>list</var>[[<var> i </var>]]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;picks the <var>i<sup>th</sup></var> element from <var>list</var> (<var>i</var> starts at 1).
+                  <hr>
+                  <var>list</var>[[<var> -i </var>]]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;starts from the end.
+                  <hr>
+                  <var>list</var>[[<var> i </var>;;<var> j </var>]]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;generates a sublist from <var>i</var> to <var>j</var>, inclusive.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="index">Examples</button>
+                  <div id="indexEx"></div>
+                </div>
+
+                <div class="alert alert-dark">
+                  <b>Statistics</b>
+                  <hr>
+                  Mean[<var>list</var>]
+                  <hr>
+                  Max[<var>list</var>]
+                  <hr>
+                  StandardDeviation[<var>list</var>]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="h3">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c3" aria-expanded="false" aria-controls="c3">
+                  Variables
+                </button>
+              </h2>
+            </div>
+            <div id="c3" class="collapse" aria-labelledby="h3" data-parent="#acc">
+              <div class="card-body">
+
+                <div class="alert alert-dark">
+                  <b>Assigning</b>
+                  <hr>
+                  <var>var</var> = <var>val</var> <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;assigns <var>val</var> to <var>var</var>.
+                  <hr>
+                  <var>var</var> := <var>expr</var> <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;assigns delayed value of <var>expr</var> (usually a function) to <var>var</var>. When <var>var</var> appears, it is replaced by <var>expr</var>, evaluated afresh each time.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="assign">Examples</button>
+                  <div id="assignEx"></div>
+                </div>
+
+                <div class="alert alert-dark">
+                  <b>Clearing</b>
+                  <hr>
+                  <var>var</var> = . <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;clears <var>val</var>.
+                  <hr>
+                  Clear[<var>var</var>]<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;clears <var>val</var>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="h4">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c4" aria-expanded="false" aria-controls="c4">
+                  Functions
+                </button>
+              </h2>
+            </div>
+            <div id="c4" class="collapse" aria-labelledby="h4" data-parent="#acc">
+              <div class="card-body">
+
+                <div class="alert alert-dark">
+                  <b>Defining</b>
+                  <hr>
+                  <var>f</var>[<var>x</var>_, <var>y</var>_, ...] := <var>expr</var> <br>
+                  <var>f</var> := Function[{<var>x, y, ...</var>}, <var>expr</var>] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;defines a function <var>f</var> in terms of <var>x, y, ...</var>.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="func">Examples</button>
+                  <div id="funcEx"></div>
+                </div>
+
+                <div class="alert alert-dark">
+                  <b>Solving Equations</b>
+                  <hr>
+                  Solve[<var>expr</var>, <var>vars</var>, (<var>dom</var>)] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;attempts to solve the system <var>expr</var> of equations or inequalities for the variables <var>vars</var> over the domain <var>dom</var> (Reals, Integers, Complexes).
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="solve">Examples</button>
+                  <div id="solveEx"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="h5">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c5" aria-expanded="false" aria-controls="c5">
+                  Graphics
+                </button>
+
+              </h2>
+            </div>
+            <div id="c5" class="collapse" aria-labelledby="h5" data-parent="#acc">
+              <div class="card-body">
+                <div class="alert alert-dark">
+                  <b>Plotting Functions</b>
+                  <hr>
+                  Plot[<var>f</var>, <var>dom</var>] <br>
+                  Plot[{<var>f<sub>1</sub>, f<sub>2</sub>, ... </var>}, <var>dom</var>] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;generates a plot of <var>f</var> as a function of x in the domain <var>dom</var>.
+                  <hr>
+                  Plot3D[<var>f</var>, <var>domX</var>, <var>domY</var>] <br>
+                  Plot3D[{<var>f<sub>1</sub>, f<sub>2</sub>, ... </var>}, <var>domX</var>, <var>domY</var>] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;generates a three-dimensional plot of <var>f</var> as a function of x and y in their respective domains.
+                  <hr>
+                  PolarPlot[<var>r</var>, <var>domθ</var>] <br>
+                  PolarPlot[{<var>r<sub>1</sub>, r<sub>2</sub>, ... </var>}, <var>domθ</var>] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;generates a polar plot of a curve with radius <var>r</var> as a function of angle <var>θ</var>.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="graph">Examples</button>
+                  <div id="graphEx"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="card">
+            <div class="card-header" id="h6">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c6" aria-expanded="false" aria-controls="c6">
+                  Linear Algebra
+                </button>
+              </h2>
+            </div>
+            <div id="c6" class="collapse" aria-labelledby="h6" data-parent="#acc">
+              <div class="card-body">
+
+                A list is a vector (dx1 matrix)<br>
+                A list of list is a matrix<br>
+                &lt;vector>.&lt;vector><br>
+                &lt;vector>x&lt;vector><br>
+                &lt;matrix>.&lt;matrix><br>
+                Norm[&lt;matrix>]<br>
+                Inverse[&lt;matrix>]<br>
+                Transpose[&lt;matrix>]<br>
+                Det[&lt;matrix>]<br>
+                VectorPlot[{&lt;vx>, &lt;vy>}, &lt;domX>, &lt;domY>]<br>
+                VectorPlot3D[{&lt;vx>, &lt;vy>, &lt;vz>}, &lt;domX>, &lt;domY>, &lt;domZ>]<br>
+
+
+              </div>
+            </div>
+          </div> -->
+
+          <div class="card">
+            <div class="card-header" id="h7">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c7" aria-expanded="false" aria-controls="c7">
+                  Calculus
+                </button>
+              </h2>
+            </div>
+            <div id="c7" class="collapse" aria-labelledby="h7" data-parent="#acc">
+              <div class="card-body">
+
+                <div class="alert alert-dark">
+                  <b>Limits</b>
+                  <hr>
+                  (Min/Max)Limit[<var>f</var>, <var>x</var> -> <var>val</var>] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;gives the (lower/upper) limit of <var>f</var> as <var>x</var> approaches a given value <var>val</var>.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="limit">Examples</button>
+                  <div id="limitEx"></div>
+                </div>
+
+                <div class="alert alert-dark">
+                  <b>Differentiation</b>
+                  <hr>
+                  <var>f</var>'[<var>x</var>] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;represents the derivative of a function <var>f</var> with respect to variable <var>x</var>.
+                  <hr>
+                  D[<var>f</var>, {<var>x</var>, <var>n</var>}] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;represents the <var>n</var><sup>th</sup> derivative of a function <var>f</var> with respect to <var>x</var>.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="diff">Examples</button>
+                  <div id="diffEx"></div>
+                </div>
+
+                <div class="alert alert-dark">
+                  <b>Integration</b>
+                  <hr>
+                  Integrate[<var>f</var>, <var>x</var>] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;gives the indefinite integral &int;<var>f</var>d<var>x</var>.
+                  <hr>
+                  Integrate[<var>f</var>, <var>dom</var>] <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;gives the definite integral &int;<sub><var>dom</var></sub><var>f</var>d<var>x</var>.
+                  <hr>
+                  <button type="button" class="btn btn-outline-dark" id="int">Examples</button>
+                  <div id="intEx"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="card">
+            <div class="card-header" id="h8">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c8" aria-expanded="false" aria-controls="c8">
+                  Complex Numbers
+                </button>
+              </h2>
+            </div>
+            <div id="c8" class="collapse" aria-labelledby="h8" data-parent="#acc">
+              <div class="card-body">
+                I<br>
+                Re[&lt;z>]<br>
+                Im[&lt;z>] (does not include i)<br>
+                Conjugate[&lt;z>]<br>
+                Abs[&lt;z>]<br>
+                Arg[&lt;z>]<br>
+
+              </div>
+            </div>
+          </div> -->
+
+          <div class="card">
+            <div class="card-header" id="h9">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c9" aria-expanded="false" aria-controls="h9">
+                  Real World Data
+                </button>
+              </h2>
+            </div>
+            <div id="c9" class="collapse" aria-labelledby="h9" data-parent="#acc">
+              <div class="card-body">
+                <div class="alert alert-dark">
+                  <b> Entities </b>
+                  <hr>
+                EntityList[<var>class</var>] <br> &nbsp;&nbsp;&nbsp;&nbsp; entities in a class<br>
+                EntityValue[<var>entities</var>,<var>property</var>] <br> &nbsp;&nbsp;&nbsp;&nbsp; value of a property of an entity<br>
+                <button type="button" class="btn btn-outline-dark" id="entity">Examples</button>
+                <div id="entityEx"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="h10">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c10" aria-expanded="false" aria-controls="c10">
+                  Geocomputation
+                </button>
+              </h2>
+            </div>
+            <div id="c10" class="collapse" aria-labelledby="h10" data-parent="#acc">
+              <div class="card-body">
+
+                <div class="alert alert-dark">
+                  <b> Maps </b>
+                  <hr>
+                  GeoDistance[<var>entity1</var>,<var>entity2</var>] <br> &nbsp;&nbsp;&nbsp;&nbsp; geo distance between entities <br>
+                  GeoPosition[<var>entity</var>] <br> &nbsp;&nbsp;&nbsp;&nbsp; geo position of an entity<br>
+                  GeoNearest[<var>"type"</var>,<var>location</var>,<var>n</var>] <br> &nbsp;&nbsp;&nbsp;&nbsp; nearest n objects of a certain type to a location<br>
+                <button type="button" class="btn btn-outline-dark" id="pos">Examples</button>
+                <div id="posEx"></div>
+              </div>
+                <div class="alert alert-dark">
+                  <b> Positions </b>
+                  <hr>
+                  GeoListPlot[<var>entity1</var>,<var>entity2</var>, <var>...</var>}] <br> &nbsp;&nbsp;&nbsp;&nbsp;plot a list of entities on a map<br>
+                  GeoGraphics[<var>entity</var>] <br> &nbsp;&nbsp;&nbsp;&nbsp;map constructed from primitives<br>
+                  GeoPath[{<var>entity1</var>,<var>entity2</var>}] <br> &nbsp;&nbsp;&nbsp;&nbsp;path between entities<br>
+                  <button type="button" class="btn btn-outline-dark" id="map">Examples</button>
+                  <div id="mapEx"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="h11">
+              <h2 class="mb-0">
+                <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#c11" aria-expanded="false" aria-controls="c11">
+                  Natural Language Interpreter
+                </button>
+              </h2>
+            </div>
+            <div id="c11" class="collapse" aria-labelledby="h11" data-parent="#acc">
+              <div class="card-body">
+
+                Interpreter["type"][“text”] specify a function to interpret natural language<br>
+                TextCases["text","type"]  find cases of a given type of object in text<br>
+                TextStructure["text"] find the grammatical structure of text<br>
+                WordTranslation["word","language"] translate a word into another language<br>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h2>Learn More!</h2>
+        <a href="https://reference.wolfram.com/language/">https://reference.wolfram.com/language/</a> <br>
+        <a href="http://www.wolfram.com/language/elementary-introduction/2nd-ed">http://www.wolfram.com/language/elementary-introduction/2nd-ed</a>
+      </div>
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+      <script src="math.js"></script>
+    </body>
+
+    </html>
